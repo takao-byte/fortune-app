@@ -1,19 +1,32 @@
-<script>
-function fortune(){
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>フォーチュンアプリ</title>
+</head>
+<body>
+  <h1>今日の運勢</h1>
 
-let fortunes = ["大吉","中吉","小吉","吉","末吉","凶"];
+  <input id="name" placeholder="名前を入力してください">
+  <button onclick="fortune()">占う</button>
 
-let rand = Math.floor(Math.random() * fortunes.length);
+  <p id="result"></p>
 
-let name = document.getElementById("name").value;
+  <script>
+    function fortune() {
+      const fortunes = ["大吉", "中吉", "小吉", "吉", "末吉", "凶"];
+      const name = document.getElementById("name").value;
 
-if(name === ""){
-    alert("名前を入力してください");
-    return;
-}
+      if (name === "") {
+        alert("名前を入力してください");
+        return;
+      }
 
-document.getElementById("result").innerText =
-name + "さんの今日の運勢は " + fortunes[rand];
-
-}
-</script>
+      const rand = Math.floor(Math.random() * fortunes.length);
+      document.getElementById("result").innerText =
+        name + "さんの今日の運勢は " + fortunes[rand] + " です。";
+    }
+  </script>
+</body>
+</html>
