@@ -1,0 +1,19 @@
+<script>
+function fortune(){
+
+let fortunes = ["大吉","中吉","小吉","吉","末吉","凶"];
+
+let rand = Math.floor(Math.random() * fortunes.length);
+
+let name = document.getElementById("name").value;
+
+if(name === ""){
+    alert("名前を入力してください");
+    return;
+}
+
+document.getElementById("result").innerText =
+name + "さんの今日の運勢は " + fortunes[rand];
+
+}
+</script>
